@@ -14,6 +14,8 @@ int main() {
     uint16_t adc_value = 0;
     // Variable para guardar el valor de temperatura
     float temperatura = 0.0;
+    float v = 0.0;
+    float rntc =
     // Constante de proporcionalidad del termistor
     const uint16_t beta = 4000;
     // Habilito USB
