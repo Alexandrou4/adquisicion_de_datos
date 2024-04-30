@@ -31,22 +31,22 @@ int main() {
     // Inicializacion del LCD
     lcd_init();
     // Inicializo ADC
-
+      adc_init(26);
     // Inicializo GPIO26 como entrada analogica
-
+      adc_gpio_init(26)
     // Selecciono canal analogico
-
+      adc_select_input(0);
     while(true) {
         // Leer NTC
-        
+        uint16_t mog=adc_read();
         // Calculo temperatura
-        
+        1 / (log(1 / (4095. / adc_value - 1)) / beta + 1.0 / 298.15) - 273.15;
         // Limpio LCD
         lcd_clear();
         // Variable para el string
         char str[16];
         // Creo string
-        
+        string str=mog;
         // Imprimo string en segunda fila
         lcd_string(str);
         // Espero 500 ms
