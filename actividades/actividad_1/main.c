@@ -54,6 +54,7 @@ int main() {
         
         // Imprimo string en segunda fila
         printf("Temperatura %.2f C \n",temperatura)
+        printf("------------------- \n");
         // Espero 500 ms
         sleep_ms(500);
     }
