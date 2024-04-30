@@ -42,6 +42,7 @@ int main() {
         // Leer NTC
         adc_value = adc_read();
         printf("valor adc: %d \n", adc_value);
+        v = adc_value*3.3/4095;
         // Calculo temperatura
         temperatura = 1 / (log(1 / (4095./ adc_value - 1)) / beta + 1.0 / 298.15) -    273.15;
         // Variable para el string
