@@ -41,7 +41,7 @@ int main() {
         adc_value = adc_read();
         printf(adc_value);
         // Calculo temperatura
-        temperatura = 1 / (log(1 / (4095. /                adc_value - 1)) / beta + 1.0 / 298.15) -    273.15 -10.0;
+        temperatura = 1 / (log(1 / (4095./ adc_value - 1)) / beta + 1.0 / 298.15) -    273.15 -10.0;
         // Variable para el string
         char str[16];
         // Creo string
