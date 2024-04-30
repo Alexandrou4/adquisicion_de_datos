@@ -15,7 +15,7 @@ int main() {
     // Variable para guardar el valor de temperatura
     float temperatura = 0.0;
     float v = 0.0;
-    float rntc =
+    float rntc = 0.0;
     // Constante de proporcionalidad del termistor
     const uint16_t beta = 4000;
     // Habilito USB
@@ -44,9 +44,9 @@ int main() {
         printf("valor adc: %d \n", adc_value);
         v = adc_value*3.3/4095;
         printf("valor voltaje: %.2f \n", v)
-        rntc = 
+        rntc = 2200.0/((3.3/v)-1);
         // Calculo temperatura
-        temperatura = 1 / (log(1 / (4095./ adc_value - 1)) / beta + 1.0 / 298.15) -    273.15;
+        temperatura = beta/(log(rntc/2200)+(beta/298.15))-273.15;
         // Variable para el string
         char str[16];
         // Creo string
