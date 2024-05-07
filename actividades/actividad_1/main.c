@@ -44,7 +44,7 @@ int main() {
         printf("valor adc: %d \n", adc_value);
         v = adc_value*3.3/4095;
         printf("valor voltaje: %.2f \n", v)
-        rntc = 2200.0/((3.3/v)-1);
+        rntc = 10000.0/((3.3/v)-1);
         printf("valor rntc: %.2f \n", rntc)
         // Calculo temperatura
         temperatura = beta/(log(rntc/2200)+(beta/298.15))-273.15;
