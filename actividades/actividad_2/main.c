@@ -11,13 +11,20 @@
 int main() {
     // Habilito USB
     stdio_init_all();
+
+    // Inicialización de I2C
+    //RP2040 - 1MHz
+    //BMP280 - 3.4 MHz
+    //PCF - 100KHz
     i2c_init(i2c0,100*1000);
-
+    // Elijo GPIO de entrada & pull up
     gpio_set_function(4, GPIO_FUNC_I2C);
-    gpio_set_function(5, GPIO_
+    gpio_set_function(5, GPIO_FUNC_I2C);
 
+    gpio_pull_up(4);
+    gpio_pull_up(5);
     // Inicializacion del LCD
-    lcd_init();
+    lcd_init(i2c0, 0x27);
     // Inicializo BMP280
     bmp280_init(i2c0);
 
