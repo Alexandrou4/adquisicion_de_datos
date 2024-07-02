@@ -11,11 +11,15 @@
 int main() {
     // Habilito USB
     stdio_init_all();
+    i2c_init(i2c0,100*1000);
+
+    gpio_set_function(4, GPIO_FUNC_I2C);
+    gpio_set_function(5, GPIO_
 
     // Inicializacion del LCD
     lcd_init();
     // Inicializo BMP280
-    bmp280_init();
+    bmp280_init(i2c0);
 
     // Obtengo parametros de compensacion
     struct bmp280_calib_param params;
